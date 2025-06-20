@@ -1,0 +1,26 @@
+
+
+.box {
+  background-color: lightcyan;
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all;
+  transition-duration: 3s;
+  transition-timing-function: linear;
+ 
+}
+
+.box:hover {
+  transform: rotate(360deg);
+  width: 400px;
+  height: 400px;
+  background-color: lightcoral;
+}
+
+p {
+  font-size: 28px;
+}
