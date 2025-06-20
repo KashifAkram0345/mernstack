@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Three Block Animations</title>
+  <style>
+    .container {
+      background-color: bisque;
+      border: 3px solid black;
+      height: 900px;
+      width: 1200px;
+      position: relative;
+      display: flex;
+    }
+
+    
+
+    .box {
+       
+      background-color:lightsalmon;
+      top: 50px;
+      left: 0;
+      animation-name: moveRight;
+      width: 300px;
+      height: 50px;
+      margin: 12px;
+      border-radius: 7px;
+      padding: 12px;
+      position: absolute;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: 3;
+      animation-direction:alternate;
+      
+    }
+
+
+    @keyframes moveRight {
+      from { 
+        left: 0;
+     }
+      to { 
+        left: 850px; 
+    }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+    
+        <h1>Hello</h1>
+        
+    </div>
+    
+  </div>
+</body>
+</html>
