@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      width: 350px;
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .box img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+     h1 {
+      font-size: 18px;
+     
+    }
+
+    p {
+      font-size: 14px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img id="img1" src="qrcode1.jpeg" alt="QR Code" />
+    <h1>Improve your front end skills</h1>
+    <p>Scan the QR code to visit Front End Mentor and take your coding skills to the next level.</p>
+  </div>
+</body>
+</html>
