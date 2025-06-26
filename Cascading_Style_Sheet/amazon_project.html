@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      width: 100%;
+      height: 65px;
+      background-color: #070707;
+      align-items: center;
+      padding: 0 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    img {
+      width: 150px;
+      cursor: pointer;
+    }
+
+    .location-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .location-button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .location-button i {
+      margin-right: 8px;
+      color: #ffffff;
+    }
+
+    .navsearch {
+      display: flex;
+      align-items: center;
+      border: 2px solid orangered;
+      background-color: rgb(128, 123, 123);
+      padding: 5px;
+      gap: 5px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    #d1 {
+      background-color: rgb(255, 247, 240);
+      border: none;
+      padding: 6px 10px;
+      color: black;
+      font-size: 14px;
+      width: 200px;
+      outline: none;
+    }
+
+    #i1 {
+      background-color: orangered;
+      color: white;
+      padding: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #i1:hover {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    #language-select {
+      background-color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+    }
+
+    #span1, #span2, #span3, #span4, #b2 {
+      color: white;
+      font-size: small;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    #span1:hover, #span2:hover, #span3:hover, #span4:hover, #b2:hover {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    .cart {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .cart:hover {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    .panel {
+      height: 35px;
+      background-color: rgb(68, 60, 60);
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #All1, #i2 {
+      font-size: large;
+      color: white;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    #All1:hover, #i2:hover {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    .class {
+      color: #ffffff;
+      display: flex;
+      gap: 35px;
+      margin-left: 30px;
+      flex-wrap: wrap;
+    }
+
+    .class b {
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .class b:hover {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    .hero {
+      background-image: url("h2.jpg");
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .img_content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+      background-color: rgb(20, 20, 24);
+    }
+
+    .box {
+      background: beige;
+      border: 2px solid black;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .box h2 {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .box_img {
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    .box_img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 992px) {
+      .img_content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .img_content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="container">
+      <img src="amazon.png" alt="Amazon Logo" />
+
+      <button class="location-button">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <div style="font-size: small;">Deliver to</div>
+          <b>Pakistan</b>
+        </div>
+      </button>
+
+      <div class="navsearch">
+        <select name="All" id="All">
+          <option value="Department">All</option>
+          <option value="Arts">Arts</option>
+          <option value="sport">Sports</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Kitchen/home">Home/Kitchen</option>
+          <option value="technology">Computers/Mobile</option>
+          <option value="book">Books</option>
+        </select>
+        <input type="text" id="d1" placeholder="Search" />
+        <div><i class="fa-solid fa-magnifying-glass" id="i1"></i></div>
+      </div>
+
+      <select id="language-select">
+        <option value="pk">🇵🇰 Pakistan</option>
+        <option value="us">🇺🇸 USA</option>
+        <option value="uk">🇬🇧 UK</option>
+        <option value="fr">🇫🇷 France</option>
+        <option value="de">🇩🇪 Germany</option>
+        <option value="jp">🇯🇵 Japan</option>
+      </select>
+
+      <div>
+        <span id="span1">Hello, Sign in</span><br />
+        <span id="span2"><b>Account & Lists</b></span>
+      </div>
+
+      <div>
+        <span id="span3">Returns</span><br />
+        <span id="span4"><b>& Orders</b></span>
+      </div>
+
+      <div class="cart">
+        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+        <b id="b2">Cart</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel -->
+  <div class="panel">
+    <div class="content">
+      <i class="fa-solid fa-bars" id="i2"></i>
+      <b id="All1">All</b>
+      <div class="class">
+        <b>Today Deal</b>
+        <b>Registry</b>
+        <b>Prime Video</b>
+        <b>Gift Card</b>
+        <b>Customer Service</b>
+        <b>Sell</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero"></div>
+
+  <!-- Image Content Boxes -->
+  <div class="img_content">
+    <div class="box"><h2>Fashion</h2><div class="box_img"><img src="box_img1.jpeg" alt="Fashion"></div></div>
+    <div class="box"><h2>Shaving</h2><div class="box_img"><img src="box2_image.jpg" alt="Shaving"></div></div>
+    <div class="box"><h2>Home</h2><div class="box_img"><img src="box3_image.jpg" alt="Home"></div></div>
+    <div class="box"><h2>Tech</h2><div class="box_img"><img src="box4_image.jpg" alt="Tech"></div></div>
+    <div class="box"><h2>Makeup</h2><div class="box_img"><img src="box5_image.jpg" alt="Makeup"></div></div>
+    <div class="box"><h2>Pets</h2><div class="box_img"><img src="box6_image.jpg" alt="Pets"></div></div>
+    <div class="box"><h2>Books</h2><div class="box_img"><img src="box7.jpeg" alt="Books"></div></div>
+    <div class="box"><h2>Sports</h2><div class="box_img"><img src="box8.jpeg" alt="Sports"></div></div>
+  </div>
+  <!-- Footer -->
+<footer style="background-color: #232f3e; color: white; margin-top: 40px; padding: 40px 20px 20px;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;">
+    <div>
+      <h4>Get to Know Us</h4>
+      <p>Careers</p>
+      <p>Blog</p>
+      <p>About Amazon</p>
+      <p>Investor Relations</p>
+      <p>Amazon Devices</p>
+      <p>Amazon Science</p>
+    </div>
+
+    <div>
+      <h4>Make Money with Us</h4>
+      <p>Sell on Amazon</p>
+      <p>Sell under Amazon Accelerator</p>
+      <p>Protect and Build Your Brand</p>
+      <p>Amazon Global Selling</p>
+      <p>Become an Affiliate</p>
+      <p>Advertise Your Products</p>
+    </div>
+
+    <div>
+      <h4>Amazon Payment Products</h4>
+      <p>Amazon Business Card</p>
+      <p>Shop with Points</p>
+      <p>Reload Your Balance</p>
+      <p>Amazon Currency Converter</p>
+    </div>
+
+    <div>
+      <h4>Let Us Help You</h4>
+      <p>Amazon and COVID-19</p>
+      <p>Your Account</p>
+      <p>Your Orders</p>
+      <p>Shipping Rates & Policies</p>
+      <p>Returns & Replacements</p>
+      <p>Help</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; padding: 20px 0; border-top: 1px solid #444; margin-top: 30px;">
+    <p style="margin-bottom: 5px;">© 2025 Amazon Clone by Your Name</p>
+    <p>Privacy Notice · Conditions of Use · Cookies</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
