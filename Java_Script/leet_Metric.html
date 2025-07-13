@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leet Metric</title>
+    <link rel="stylesheet" href="leet_Metric.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Leet Metric</h1>
+      <label for="username-input"><b>Enter your username</b></label
+      ><br />
+      <input
+        id="username-input"
+        type="text"
+        placeholder="Enter LeetCode Username"
+      />
+      <button id="search-button">Search</button>
+
+      <!-- Stats Cards -->
+      <div id="stats-cards" class="stats-cards" style="display: none">
+        <div class="card easy">
+          <p><span id="easy-count">0/0</span></p>
+          <p>EASY</p>
+        </div>
+        <div class="card medium">
+          <p><span id="medium-count">0/0</span></p>
+          <p>MEDIUM</p>
+        </div>
+        <div class="card hard">
+          <p><span id="hard-count">0/0</span></p>
+          <p>HARD</p>
+        </div>
+      </div>
+
+      <!-- No Card Message -->
+      <div id="no-card-message" class="no-card" style="display: block">
+        Please insert card (Enter username to see stats)
+      </div>
+    </div>
+
+    <script src="leet_Metric.js"></script>
+  </body>
+</html>
